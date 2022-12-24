@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<title>{{project.title}}</title>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">PORTFOLIO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="shift">
+            <ul>
+                <li><a href="/"></i>Home</a></li>
+                <li><a href="/about/">About me</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</nav>
+<h1 style="text-align: center;"><br><br><br>{{ project.title }}</h1>
+<div class="row" style="padding: 25px;">
+    <div class="col-md-8">       
+        <p style="border: 0;">Project description:</p>
+        <div class="thing">
+        <img src="{{ project.image }}" alt="" width="200px" style="margin: 15px; border: solid;">
+        <br>
+        <p>{{ project.description_detail }}</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h5>About the project:</h5>
+        <div class="thing">
+            <p>{{ project.description }}</p>
+        </div>
+        <br>
+        <h5>Technology used:</h5>
+        <div class="thing">
+            <p>{{ project.technology }}</p>
+        </div>
+        <br>
+        <h5>Link to project (click to go):</h5>
+        <div class="thing">
+            <a href="{{project.github_link}}"><p>{{ project.github_link }}</p></a>
+        </div>
+    </div>
+</div>
+
+<style>
+     .container a{
+        font-size:100%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .thing a {
+        text-decoration: none;
+        color: aliceblue;
+    }
+
+</style>
+{% endblock %}
